@@ -19,7 +19,7 @@ int studentCounter = 0;
 void addStudents() {
     Students newStudents;
     bool found = false;
-            cout << "\nEnter Student ID: ";
+            cout << "Enter Student ID: ";
             cin >> newStudents.StudentID;
             cout << "Enter First Name: ";
             cin.ignore(); 
@@ -36,7 +36,7 @@ void addStudents() {
             found = false;
             for (int i = 0; i < studentCounter; i++) {
                 if (student[i].StudentID == newStudents.StudentID) {
-                    cout << "\nStudent Id already exist";
+                    cout << "Student Id already exist";
                     cout << "\nEnter a unique one";
                     cout << "\nEnter a unqiue ID: ";
                     cin >> newStudents.StudentID;
@@ -61,7 +61,7 @@ void displayStudentsRecords(int studentid) {
     bool found = false;
     for (int i = 0; i < studentCounter; i++) {
         if (student[i].StudentID == studentid) {
-            cout << "\n Student ID: " << student[i].StudentID;
+            cout << "Student ID: " << student[i].StudentID;
             cout << "\nFirst Name: " << student[i].firstName;
             cout << "\nLast Name: " << student[i].lastName;
             cout << "\nCourse: " << student[i].course;
@@ -83,7 +83,7 @@ void editStudents() {
     }
 
     int studentid;
-        cout << "\nEnter Student ID to search: ";
+        cout << "Enter Student ID to search: ";
         cin >> studentid;
         
         
@@ -107,7 +107,7 @@ void editStudents() {
                      bool match = false;
                      for(int j = 0; j < studentCounter; j++){
                     if(student[j].StudentID == student[i].StudentID && j != i){
-                     cout << "\nStudent Id already exist";
+                     cout << "Student Id already exist";
                      cout << "\nEnter a unique one";
                      cout << "\nEnter a unqiue studentd ID: ";
                      cin >> student[i].StudentID;
@@ -119,7 +119,7 @@ void editStudents() {
             if(!match)
             break;
           }        
-                cout << "\nThe Student ID has been Updated";           
+                cout << "The Student ID has been Updated";           
                 found = true;
                 break;
                 }
@@ -153,22 +153,23 @@ void deleteStudents() {
             displayStudentsRecords(studentid);
             found = true;
 
-            cout << "\nAre you sure you want to delete student from the records?(y/n)";
+            cout << "\nAre you sure you want to delete student from the records?(y/n): ";
             cin >> choice;
             if(choice == 'Y' || choice == 'y'){
             for (int j = i; j < studentCounter - 1; j++) {
                 student[j] = student[j + 1];
             }
             studentCounter--;
-            cout << "\nThe Student has been deleted from the records";
+            cout << "The Student has been deleted from the records";
         }
         else{
             cout << "Student was not deleted";
         }
     }
-    if (!found) {
-        cout << "Student ID does not exist";
-    }
+   
+}
+if (!found) {
+    cout << "Student ID does not exist";
 }
 }
 
@@ -180,10 +181,10 @@ void viewStudents() {
     int option;
 
     while (true) {
-        cout << "\n How would you like to view Student Records: ";
+        cout << "\nHow would you like to view Student Records: ";
         cout << "\n[1] View Alphabetically by lastNames: ";
         cout << "\n[2] View Gpa by Ascending order: ";
-        cout << "\n Enter your choice: ";
+        cout << "\nEnter your choice: ";
         cin >> option;
         if (option == 1 || option == 2) {
             break;
@@ -192,7 +193,7 @@ void viewStudents() {
     }
 
     if (option == 1) {
-        cout << "\nStudent Record View in Alphabetically: ";
+        cout << "Student Record View in Alphabetically: ";
         for (int i = 0; i < studentCounter - 1; i++) {
             for (int j = 0; j < studentCounter - 1 - i; j++) {
                 if (student[j].lastName > student[j + 1].lastName) {
@@ -203,7 +204,7 @@ void viewStudents() {
             }
         }
     } else if (option == 2) {
-        cout << "\nStudent Record View by GPA: ";
+        cout << "Student Record View by GPA: ";
         for (int i = 0; i < studentCounter - 1; i++) {
             for (int j = 0; j < studentCounter - 1 - i; j++) {
                 if (student[j].gpa > student[j + 1].gpa) {
@@ -216,7 +217,7 @@ void viewStudents() {
     }
 
     for (int i = 0; i < studentCounter; i++) {
-        cout << "\n Student ID: " << student[i].StudentID;
+        cout << "\nStudent ID: " << student[i].StudentID;
         cout << "\nFirst Name: " << student[i].firstName;
         cout << "\nLast Name: " << student[i].lastName;
         cout << "\nCourse: " << student[i].course;
@@ -229,7 +230,7 @@ int main() {
     int option;
 
     do {
-        cout << "\n==MENU==";
+        cout << "\n==========MENU============";
         cout << "\n [1] Add Students";
         cout << "\n [2] Edit Students";
         cout << "\n [3] Delete Students";
